@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>Awigya Zora Janitra — Portofolio Frontend Developer</title>
+   <meta name="description" content="Portofolio Awigya Zora Janitra, siswa RPL SMKN 4 Malang yang fokus pada Frontend Web Development dan desain antarmuka.">
+<meta property="og:title" content="Awigya Zora Janitra — Portofolio">
+<meta property="og:description" content="Siswa RPL SMKN 4 Malang. Frontend, desain antarmuka, dan eksplorasi AI.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f3f8;--surface:#fff;--ink:#1a2030;--muted:#5a6275;--line:#dedbe7;--accent:#4a4ebf;--on-accent:#fff;--soft:#e8e7f9;--green:#2f6b4f;--nav:rgba(245,243,248,.88);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121722;--surface:#1b2232;--ink:#eceef6;--muted:#a3abc0;--line:#2c3550;--accent:#a3a7ff;--on-accent:#12162b;--soft:#262c4d;--green:#7fd1a4;--nav:rgba(18,23,34,.88);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121722;--surface:#1b2232;--ink:#eceef6;--muted:#a3abc0;--line:#2c3550;--accent:#a3a7ff;--on-accent:#12162b;--soft:#262c4d;--green:#7fd1a4;--nav:rgba(18,23,34,.88);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nav);backdrop-filter:blur(10px)}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",Georgia,"Times New Roman",serif;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,90%);margin:0 auto}
+section{padding:88px 0}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.sec-head{margin-bottom:36px;max-width:560px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
+.sec-head p{color:var(--muted)}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{font-family:"Bricolage Grotesque",Georgia,serif;font-weight:800;font-size:19px;text-decoration:none}
+.menu{display:flex;gap:4px;list-style:none;padding:0;overflow-x:auto}
+.menu a{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap}
+.menu a:hover{background:var(--soft);color:var(--ink)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:17px;flex-shrink:0}
+/* buttons */
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid var(--accent);cursor:pointer;font-family:inherit;transition:transform .15s}
+.btn.pri{background:var(--accent);color:var(--on-accent)}
+.btn.sec{background:transparent;color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+/* hero */
+.hero{padding:64px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--soft);padding:6px 14px;border-radius:999px;font-size:13.5px;font-weight:600;margin-bottom:20px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);display:block}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:800;margin-bottom:16px}
+.hero .role{font-size:clamp(17px,2.2vw,21px);font-weight:600;color:var(--accent);margin-bottom:12px}
+.hero .tag{color:var(--muted);max-width:480px;margin-bottom:28px;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.photo{position:relative;justify-self:center;width:min(100%,340px)}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 24px 24px;display:block;border:1px solid var(--line)}
+.photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:999px 999px 24px 24px;z-index:-1;opacity:.5}
+.loc{margin-top:22px;font-size:14px;color:var(--muted)}
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p+p{margin-top:14px}
+.facts{display:grid;gap:12px;align-content:start}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.alt .fact{background:var(--bg)}
+.fact b{display:block;font-size:13px;color:var(--muted);font-weight:500}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:19px;margin-bottom:16px}
+.bar{margin-bottom:14px}
+.bar-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500;margin-bottom:5px}
+.bar-top span:last-child{color:var(--muted);font-weight:400}
+.track{height:8px;background:var(--soft);border-radius:99px;overflow:hidden}
+.fill{height:100%;background:var(--accent);border-radius:99px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--soft);padding:6px 13px;border-radius:99px;font-size:14px;font-weight:500}
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:8px;display:grid;gap:28px}
+.tl-item{position:relative;padding-left:28px}
+.tl-item::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-item.todo::before{background:var(--bg);border:2px dashed var(--muted)}
+.tl-item.todo{opacity:.8}
+.when{font-size:13.5px;font-weight:600;color:var(--accent)}
+.tl-item h3{font-size:20px;margin:2px 0 4px}
+.tl-item p{color:var(--muted);max-width:620px}
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.f{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 18px;border-radius:99px;font:600 14px "Figtree",sans-serif;cursor:pointer}
+.f[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.proj[hidden]{display:none}
+.thumb{height:150px;display:grid;place-items:center;font:800 44px "Bricolage Grotesque",Georgia,serif;color:#fff;letter-spacing:-.02em}
+.t1{background:linear-gradient(135deg,#3b6f8f,#7aa7c2)}
+.t2{background:linear-gradient(135deg,#4a4ebf,#8d8fe8)}
+.t3{background:linear-gradient(135deg,#a8476b,#e39ab4)}
+.proj-b{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.proj h3{font-size:19px}
+.proj p{color:var(--muted);font-size:15px;flex:1}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font-size:12.5px;font-weight:600;background:var(--soft);padding:3px 10px;border-radius:6px}
+.proj a.btn{align-self:flex-start;padding:9px 18px;font-size:14px;margin-top:4px}
+/* edu */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu .card h3{font-size:18px;margin-bottom:4px}
+.edu .card p{color:var(--muted);font-size:15px}
+.edu .card .when{display:block;margin-bottom:6px}
+/* testi */
+.testi{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.testi blockquote{background:var(--surface);border:1px dashed var(--muted);border-radius:16px;padding:24px}
+.testi footer{margin-top:12px;font-size:14px;font-weight:600}
+.note{font-size:13.5px;color:var(--muted);margin-top:16px}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
+.links{display:grid;gap:12px;margin-top:20px}
+.links a{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;text-decoration:none;word-break:break-word}
+.links a:hover{border-color:var(--accent)}
+.links small{color:var(--muted);font-size:13px}
+form{display:grid;gap:14px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+textarea{min-height:130px;resize:vertical}
+footer.foot{padding:32px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted);text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:90%}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+.hero-grid,.about,.contact,.edu,.testi{grid-template-columns:1fr}
+.skills,.grid{grid-template-columns:1fr}
+.photo{order:-1;width:min(70%,280px)}
+section{padding:64px 0}
+.nav-in{flex-wrap:wrap}.menu{order:3;width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Navigasi utama">
+ <div class="wrap nav-in">
+  <a class="brand" href="#home">Awigya Zora</a>
+  <ul class="menu">
+   <li><a href="#about">Tentang</a></li>
+   <li><a href="#skills">Keahlian</a></li>
+   <li><a href="#experience">Pengalaman</a></li>
+   <li><a href="#projects">Proyek</a></li>
+   <li><a href="#education">Pendidikan</a></li>
+   <li><a href="#contact">Kontak</a></li>
+  </ul>
+  <button class="theme" id="theme" aria-label="Ganti tema terang atau gelap">🌓</button>
+ </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <p class="badge"><i></i> Siswa aktif, terbuka untuk PKL dan magang</p>
+   <h1>Awigya Zora Janitra</h1>
+   <p class="role">Frontend Developer · Graphic Designer · Data Analyst pemula</p>
+   <p class="tag">Saya membuat tampilan web yang rapi, jelas, dan nyaman dipakai, lalu terus mengasahnya lewat proyek nyata.</p>
+   <div class="cta">
+    <a class="btn pri" href="#projects">Lihat proyek</a>
+    <button class="btn sec" id="cv" type="button">Unduh CV</button>
+   </div>
+   <p class="loc">📍 Malang, Indonesia &nbsp;|&nbsp; SMKN 4 Malang, jurusan RPL</p>
+  </div>
+     <div class="photo"><img src="Zora Mountain SMP.jpg" alt="Zora Photo"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="alt" id="about">
+ <div class="wrap about">
+  <div class="rv">
+   <div class="sec-head"><h2>Tentang saya</h2></div>
+   <p>Saya pelajar Rekayasa Perangkat Lunak di SMKN 4 Malang yang senang mengubah ide menjadi halaman web yang bisa langsung dicoba orang. Dari tugas sekolah sampai proyek mandiri, saya membiasakan diri menulis kode yang bersih dan desain yang mudah dipahami.</p>
+   <p>Minat terbesar saya ada di Front-End Web Development, eksplorasi teknologi baru termasuk AI, dan pengembangan game sederhana. Saya juga terbiasa tampil di depan orang, mulai dari menjadi MC acara sekolah sampai mengikuti kegiatan internasional.</p>
+   <p>Target saya: mendapat pengalaman PKL atau magang sebagai web developer, lalu berkarier di industri teknologi atau melanjutkan kuliah di bidang yang sama.</p>
+  </div>
+  <div class="facts rv">
+   <div class="fact"><b>Sekolah</b>SMKN 4 Malang, RPL</div>
+   <div class="fact"><b>Fokus</b>Frontend, UI/UX, dasar AI</div>
+   <div class="fact"><b>Lokasi</b>Malang, Jawa Timur</div>
+   <div class="fact"><b>Bahasa</b>Indonesia, Inggris (belajar aktif)</div>
+  </div>
+ </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+ <div class="wrap">
+  <div class="sec-head rv"><h2>Keahlian</h2><p>Level menunjukkan kemampuan saya saat ini, bukan klaim ahli.</p></div>
+  <div class="skills rv">
+   <div class="card"><h3>Hard skill</h3>
+    <div class="bar"><div class="bar-top"><span>HTML dan CSS</span><span>Menengah</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
+    <div class="bar"><div class="bar-top"><span>JavaScript</span><span>Berkembang</span></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
+    <div class="bar"><div class="bar-top"><span>Logika dan algoritma</span><span>Berkembang</span></div><div class="track"><div class="fill" style="width:60%"></div></div></div>
+    <div class="bar"><div class="bar-top"><span>Desain UI (Figma)</span><span>Berkembang</span></div><div class="track"><div class="fill" style="width:60%"></div></div></div>
+    <div class="bar"><div class="bar-top"><span>Database</span><span>Dasar</span></div><div class="track"><div class="fill" style="width:35%"></div></div></div>
+   </div>
+   <div class="card"><h3>Tools dan software</h3>
+    <div class="chips"><span class="chip">Visual Studio Code</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Vercel</span><span class="chip">Figma</span><span class="chip">Canva</span><span class="chip">Browser DevTools</span></div>
+   </div>
+   <div class="card"><h3>Soft skill</h3>
+    <div class="chips"><span class="chip">Public speaking</span><span class="chip">Kerja sama tim</span><span class="chip">Komunikasi</span><span class="chip">Problem solving</span><span class="chip">Cepat belajar</span><span class="chip">Kreatif</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="alt" id="experience">
+ <div class="wrap">
+  <div class="sec-head rv"><h2>Pengalaman dan organisasi</h2><p>Kegiatan yang membentuk cara saya belajar dan bekerja dengan orang lain.</p></div>
+  <div class="tl rv">
+   <div class="tl-item todo"><span class="when">Segera, isi nanti</span><h3>PKL / Magang [nama perusahaan]</h3><p>Slot ini disiapkan untuk pengalaman PKL atau magang pertama. Tambahkan peran, durasi, dan hasil kerja yang terukur.</p></div>
+   <div class="tl-item"><span class="when">2026 sampai sekarang</span><h3>Anggota Ekstrakurikuler AI-Society</h3><p>Terlibat dalam kegiatan dan proyek seputar kecerdasan buatan, dari memahami konsep dasar sampai mencoba membuat program sederhana.</p></div>
+   <div class="tl-item"><span class="when">2024</span><h3>MC acara DJ Kaizer, SMP</h3><p>Memperkenalkan artis, memandu rangkaian acara, dan menjaga suasana tetap hidup di depan banyak penonton.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+ <div class="wrap">
+  <div class="sec-head rv"><h2>Proyek unggulan</h2><p>Tiga karya yang bisa langsung dibuka dan dicoba.</p></div>
+  <div class="filters rv" role="group" aria-label="Filter kategori proyek">
+   <button class="f" data-f="all" aria-pressed="true">Semua</button>
+   <button class="f" data-f="web" aria-pressed="false">Web</button>
+   <button class="f" data-f="js" aria-pressed="false">JavaScript</button>
+   <button class="f" data-f="uiux" aria-pressed="false">UI/UX</button>
+  </div>
+  <div class="grid rv">
+   <article class="proj" data-cat="web">
+    <div class="thumb t1" aria-hidden="true">GP</div>
+    <div class="proj-b"><h3>Gelas Pagi</h3>
+     <p>Website penjualan susu sapi dengan informasi produk dan alur pemesanan yang mudah diikuti pembeli.</p>
+     <div class="stack"><span>HTML</span><span>CSS</span></div>
+     <a class="btn sec" href="https://awigyazora-source.github.io/Gelas-Pagi/" target="_blank" rel="noopener">Buka proyek</a></div>
+   </article>
+   <article class="proj" data-cat="js web">
+    <div class="thumb t2" aria-hidden="true">AM</div>
+    <div class="proj-b"><h3>About-Me Interaktif</h3>
+     <p>Website perkenalan diri dengan fitur tanya jawab berbasis AI yang menjawab pertanyaan sederhana tentang saya.</p>
+     <div class="stack"><span>JavaScript</span><span>AI</span><span>Vercel</span></div>
+     <a class="btn sec" href="https://about-me-rust-iota.vercel.app/" target="_blank" rel="noopener">Buka proyek</a></div>
+   </article>
+   <article class="proj" data-cat="uiux web">
+    <div class="thumb t3" aria-hidden="true">CM</div>
+    <div class="proj-b"><h3>CHIRA Makeup</h3>
+     <p>Proyek PjBL: website e-commerce pemesanan jasa dan artist MUA untuk salon make-up.</p>
+     <div class="stack"><span>UI/UX</span><span>HTML</span><span>CSS</span></div>
+     <a class="btn sec" href="https://awigyazora-source.github.io/CHIRA-MUA-PJBL/" target="_blank" rel="noopener">Buka proyek</a></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="alt" id="education">
+ <div class="wrap">
+  <div class="sec-head rv"><h2>Pendidikan dan sertifikasi</h2></div>
+  <div class="edu rv">
+   <div class="card"><span class="when">2026 sampai sekarang</span><h3>SMKN 4 Malang</h3><p>Kompetensi keahlian Rekayasa Perangkat Lunak (RPL). Materi: pemrograman dasar, pemrograman web, basis data, dan perancangan antarmuka.</p></div>
+   <div class="card"><span class="when">Lulus 2025</span><h3>SMP LABORATORIUM UM Malang</h3><p>Aktif di kegiatan sekolah, termasuk menjadi MC acara dan mengikuti program STEM.</p></div>
+   <div class="card"><span class="when">2025</span><h3>Sertifikat Stem Exhibition Camp</h3><p>University of Technology Malaysia (UTM). Diikuti saat masih di jenjang SMP.</p></div>
+   <div class="card"><span class="when">Rencana</span><h3>Sertifikasi kompetensi RPL</h3><p>Belum memiliki sertifikasi resmi. Sedang dipersiapkan sebagai langkah berikutnya.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+ <div class="wrap">
+  <div class="sec-head rv"><h2>Kata mereka</h2></div>
+  <div class="testi rv">
+   <blockquote>“Zora cepat menangkap arahan dan hasil kerjanya rapi. Mudah diajak berdiskusi.”<footer>Kata Teman saya</footer></blockquote>
+   <blockquote>“Kerja samanya enak dan komunikatif saat mengerjakan proyek kelompok.”<footer>Kata Teman saya</footer></blockquote>
+  </div>
+  <p class="note">Kutipan di atas hanya contoh. Untuk kedepannya akan diisi dengan testimoni asli.</p>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section class="alt" id="contact">
+ <div class="wrap contact">
+  <div class="rv">
+   <div class="sec-head"><h2>Mari terhubung</h2><p>Punya tawaran PKL, magang, atau ingin berdiskusi? Kirim pesan atau hubungi lewat tautan ini.</p></div>
+   <div class="links">
+    <a href="mailto:awigya.zora@gmail.com"><small>Email</small>awigya.zora@gmail.com</a>
+    <a href="https://wa.me/6288989865380" target="_blank" rel="noopener"><small>WhatsApp</small>+62 889-8986-5380</a>
+    <a href="https://github.com/awigyazora-source" target="_blank" rel="noopener"><small>GitHub</small>github.com/awigyazora-source</a>
+   </div>
+  </div>
+  <form id="form" class="rv">
+   <label>Nama<input name="n" required autocomplete="name"></label>
+   <label>Email<input name="e" type="email" required autocomplete="email"></label>
+   <label>Pesan<textarea name="m" required></textarea></label>
+   <button class="btn pri" type="submit">Kirim pesan</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">© 2026 Awigya Zora Janitra. Dibuat dengan HTML, CSS, dan JavaScript.</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// ===== Tema terang/gelap =====
+var root=document.documentElement;
+function setTheme(t){root.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(e){}}
+try{var s=localStorage.getItem("theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
+document.getElementById("theme").onclick=function(){
+  var cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  setTheme(cur==="dark"?"light":"dark");
+};
+// ===== Notifikasi kecil =====
+var toast=document.getElementById("toast"),tt;
+function say(m){toast.textContent=m;toast.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove("show")},3200)}
+// Ganti dengan link CV asli (mis. file PDF di Google Drive) lalu ubah handler ini ke window.open(link)
+document.getElementById("cv").onclick=function(){say("Saat ini Zora belum memiliki CV")};
+// ===== Filter proyek =====
+var fb=document.querySelectorAll(".f"),pr=document.querySelectorAll(".proj");
+fb.forEach(function(b){b.onclick=function(){
+  fb.forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+  pr.forEach(function(p){p.hidden=!(b.dataset.f==="all"||p.dataset.cat.split(" ").indexOf(b.dataset.f)>-1)});
+}});
+// ===== Form kontak: buka aplikasi email =====
+document.getElementById("form").onsubmit=function(e){
+  e.preventDefault();var f=e.target;
+  var body="Nama: "+f.n.value+"\nEmail: "+f.e.value+"\n\n"+f.m.value;
+  location.href="mailto:awigya.zora@gmail.com?subject="+encodeURIComponent("Pesan dari portofolio: "+f.n.value)+"&body="+encodeURIComponent(body);
+  say("Membuka aplikasi email kamu…");
+};
+// ===== Animasi muncul saat scroll =====
+var els=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add("in")})}
+</script>
+</body>
+</html>
